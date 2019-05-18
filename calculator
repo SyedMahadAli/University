@@ -1,0 +1,16 @@
+#include<iostream.h>
+int main()
+{
+	int num1,num2, total;
+	cout<<"Enter 1st number:";
+	cin>>num1;
+	cout<<"Enter 2nd number:";
+	cin>>num2;
+	
+	cout<<"Press 1 for Addition"<<endl;
+	cout<<"Press 2 for Subtraction"<<endl;
+	cout<<"Press 3 for Multiplication"<<endl;
+	cout<<"Press 4 for Division"<>endl;
+	cout<<"Press 5 for Remainder"<<endl;
+	return 0;
+}

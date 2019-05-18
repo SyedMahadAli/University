@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+
+struct Distance
+	{
+	int feet;
+	float inches;
+	
+};
+struct Room
+	{ 
+	Distance length;
+	 Distance width;
+	
+};
+
+
+
+int main()
+{ 
+ double sum1[3], sum2[3];
+ double area[3];
+ Room r[3];
+ for(int i=0;i<3;i++)
+ 	{
+ 	
+ 
+cout<<"Enter Length in feet of room "<<i+1<<":";
+cin>>r[i].length.feet;
+cout<<"Enter Length in inches for room "<<i+1<<":";
+cin>>r[i].length.inches;
+cout<<"Enter width in feet of room "<<i+1<<":";
+cin>>r[i].width.feet;
+cout<<"Enter width in inches for room "<<i+1<<":";
+cin>>r[i].width.inches;
+///////////////////////////
+cout<<r[i].length.feet<<endl<<r[i].length.inches<<endl;
+
+cout<<r[i].width.feet<<endl<<r[i].width.inches<<endl;
+
+sum1[i]=r[i].length.feet+(r[i].length.inches)/12;
+sum2[i]=r[i].width.feet+(r[i].width.inches)/12;
+//////////////////////////////
+cout<<"Sum of length:"<<sum1[i]<<endl;
+cout<<"Sum of width:"<<sum2[i]<<endl;
+//////////////////////////
+area[i]=sum1[i]+sum2[i];
+
+cout<<endl;
+cout<<"Area of Room is : "<<area[i];
+cout<<endl<<endl;
+ }
+ 
+	
+}
