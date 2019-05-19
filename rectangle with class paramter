@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+class dist{
+	private:
+	int lf, wf ;
+	float li, wi, area;
+	
+	public:
+	dist():lf(0),li(0.0),wf(0),wi(0.0)
+	{
+		
+	}
+	void get_data()
+	{
+		cout<<"Enter Feet For Lenght : ";
+		cin>>lf;
+		cout<<"Enter Inches For Lenght : ";
+		cin>>li;
+		cout<<"Enter Feet For width : ";
+		cin>>wf;
+		cout<<"Enter Inches For width : ";
+		cin>>wi;
+	}
+	void cala(dist & a1)
+	{
+	a1.area= (a1.lf+a1.li/12)*(a1.wf+a1.wi/12);	
+	}
+	void cal()
+	{
+		area= (lf + li/12) * (wf + wi/12);
+	}
+	void display()
+	{
+		
+		cout<<"the area of rectangle is: "<<area<<endl;
+		
+	}
+
+	
+
+};
+
+int main()
+{
+	dist o1;
+	o1.get_data();
+	o1.cala(o1);
+	o1.display();
+	o1.cal();
+	o1.display();
+
+	return 0;
+}
