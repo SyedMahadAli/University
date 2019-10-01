@@ -1,0 +1,129 @@
+#include<iostream>
+#include <cmath>
+using namespace std;
+
+class Calculator{
+	public:
+	
+	int add(int x, int y)   //additon function
+		{
+		int ans;
+		ans = x+y;
+		return ans;
+	}
+	int sub(int x , int y) //subtraction function
+	{
+		int ans;
+		ans = x-y;
+		return ans;
+		
+	}
+	int mul(int x , int y)
+	{
+		int ans;
+		ans = x*y;
+		return ans;
+		
+	}
+		int div(int x , int y)
+	{
+		int ans;
+		ans = x/y;
+		return ans;
+		
+	}
+	double sqroot(double x){
+	double ans = sqrt(x);
+	return ans;
+	}
+	
+	
+};
+
+class squre_root: public Calculator{
+	private:
+	double z;
+	public:
+  double sqroot(double ){
+	double result =	sqrt(z);
+	cout << "Square root of " << z << " is " << result << endl;
+
+	}
+	
+};
+
+int main()
+{
+	Calculator c1;
+	
+	int choice;
+	int x,y;
+	cout<<endl;
+	cout<<"\t\tCalculator"<<endl;
+	cout<<"------------------------------------------------"<<endl;
+	cout<<endl;
+	
+	cout<<"1. For addition:"<<endl;
+	cout<<"2. For subtraction:"<<endl;
+	cout<<"3. For multiplication:"<<endl;
+	cout<<"4. For division:"<<endl;
+	cout<<"5. For Square root:"<<endl;
+	cout<<"------------------------------------------------"<<endl;
+	cout<<"Select the Opeartion:"<<endl;
+	cin>>choice;
+	
+	switch(choice){
+	
+		case 1: //Addition
+        cout << "**ADDITION**" << endl;
+        cout << "Please enter first number: " << endl;
+        cin >> x;
+        cout << "Please enter second number: " << endl;
+        cin >> y;
+        cout << x << " + " << y << " = "; 
+        cout << c1.add(x, y);
+        break;          
+        
+    case 2: //Subtraction
+        cout << "**SUBTRACTION**" << endl;  
+        cout << "Please enter first number: " << endl;
+        cin >> x;
+        cout << "Please enter second number: " << endl;
+        cin >> y;
+        cout << x << " - " << y << " = ";
+        cout << c1.sub(x, y);
+        break;              
+    case 3: //Multiplication
+        cout << "**MULTIPLICATION**" << endl;   
+        cout << "Please enter first number: " << endl;
+        cin >> x;
+        cout << "Please enter second number: " << endl;
+        cin >> y;
+        cout << x << " x " << y << " = ";
+        cout << c1.mul(x, y);
+        break;      
+    case 4: //Division
+        cout << "**DIVISION**" << endl; 
+        cout << "Please enter first number: " << endl;
+        cin >> x;
+        cout << "Please enter second number: " << endl;
+        cin >> y;
+        cout << x << " / " << y << " = ";
+        cout << c1.div(x, y);
+        break;
+    case 5: 
+    cout << "**Square root**" << endl; 
+        cout << "Please enter number: " << endl;
+        cin >> x;
+        
+        cout << "Square root of " << x << " is " << endl;
+        cout << c1.sqroot(x);
+        cout<<endl;
+        break;
+    
+    default:
+        cout << "Invalid Input...";
+        break;
+	}
+	
+}
