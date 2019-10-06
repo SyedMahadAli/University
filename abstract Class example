@@ -1,0 +1,89 @@
+#include <iostream>
+using namespace std;
+
+class Beverages{
+
+public:
+
+      //This is common behaviour to all derived classes.
+      void addHotItems(){
+			cout<<"\tAdd Hot Water "<< endl;
+			cout<<"\tAdd Milk "<< endl;
+			cout<<"\tAdd Sugar "<< endl;
+            
+      }
+
+      //Defer / force derived classes to implement it.
+
+      virtual void addSachets () = 0;//abstract function
+
+};
+
+//Derived class tea
+class Tea:public Beverages
+{
+
+public:
+      void addSachets ()// implement specific behavior
+      {
+            cout<<"\tAdd Tea "<< endl;
+      }
+
+      Tea(){
+            cout<<"Preparing Tea... "<< endl;
+      }
+
+};
+
+class Coffee :public Beverages
+{
+
+public:
+      void addSachets (){
+            cout<<"\tAdd Coffee "<< endl;
+      }
+
+      Coffee(){
+            cout<<"Preparing Coffee... "<< endl;
+      }
+};
+
+
+
+int main(){
+      //create pointer of abstract base class
+      //and assign an object of derived class
+
+      //Beverages*tea = new Tea();
+
+      //tea ->addHotItems();
+      //tea ->addSachets();
+
+
+      //Prepare Coffee
+      //Beverages*coffee = new Coffee();
+
+      //coffee ->addHotItems();
+      //coffee ->addSachets();
+     
+	 // Tea t1;              //without pointer of base Class
+    //  t1.addHotItems();
+     // t1.addSachets();
+     // cout<<endl;
+    // Coffee c1;
+    //    c1.addHotItems();
+     // c1.addSachets();
+  Beverages *ptr ;
+  Tea t; 
+  ptr= &t;
+  ptr->addHotItems();
+  ptr->addSachets();
+  Coffee c;
+  ptr=&c;
+  ptr->addHotItems();
+  ptr->addSachets();
+  
+  
+      return 0;
+
+}
