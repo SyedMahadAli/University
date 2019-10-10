@@ -1,0 +1,90 @@
+#include<iostream>
+using namespace std;
+ 
+ class dist
+ {
+  	private:
+	  int feet;
+	  float inches;
+	public:
+	dist(){
+		feet=0;
+		inches=0;
+	}
+	int get_feet()
+	{
+		cout<<"Enter Feet:";
+		cin>>feet;
+		return feet;
+	} 
+	float get_inches()
+	{
+		cout<<"Enter inches:";
+		cin>>inches;
+		return inches;
+		
+	}
+	void display()
+	{
+		cout<<endl;
+		cout<<"Feet ="<<feet<<endl;
+		cout<<"Inches ="<<inches<<endl;
+		
+	} 
+	  	
+ };
+ 
+ class area
+ {
+ 	private:
+ 	int t_feet;
+ 	float t_inches;
+ 	dist length;
+ 	dist width;
+ 	public:
+ 	area(){
+	 	t_feet=0;
+	 	t_inches=0;
+	 }
+ 	void get()
+ 	{
+	 	cout<<"Enter feet & inches for Length:"<<endl;
+	 	t_feet=length.get_feet();
+	 	
+	 	t_inches=length.get_inches();
+	 	cout<<endl;
+	 	
+	 	cout<<"Enter feet & inches for width:"<<endl;
+	 	
+	 	t_feet*=width.get_feet();
+	 	
+	 	t_inches*=width.get_inches();
+	 	cout<<endl;
+	 		if(t_inches>=12)
+		{
+			t_feet+= t_inches/12;
+			t_inches=(int)t_inches%12;
+	 		
+	 }
+ 	}
+	 
+	 void display()
+	 	{
+	 		cout<<endl;
+	 		cout<<"Total feet:"<<t_feet<<endl;
+	 		cout<<"Total inches:"<<t_inches<<endl;
+	 		cout<<"------------------------------"<<endl;
+	 		cout<<"Area of rectangle is "<<t_feet<<"feet & "<<t_inches<<"inch";
+	 		cout<<endl;
+ 		
+ 	}
+	 
+ };
+ 
+ int main()
+ {
+ 	area a1;
+ 	a1.get();
+ 	a1.display();
+ 	return 0;
+ }
