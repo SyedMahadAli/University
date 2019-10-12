@@ -1,0 +1,108 @@
+#include<iostream>
+using namespace std;
+class employee
+{
+	private:
+	char name[40];				//employee name
+	unsigned long number;       //employee number
+	public:
+	void getdata()
+		{
+		cout<<" Enter Name:";
+		cin>>name;
+		cout<<" Enter Number:";
+		cin>>number;
+		cout<<endl;
+	}
+	void display()
+	{
+		cout<<" Name: "<<name<<endl;
+		cout<<" Employee Number: "<<number<<endl;
+	}
+};
+////////////////////////////////////////
+class manager
+{
+	private:
+	char title[40];    //branch-manager,president , etc.
+	long dues;		  //golf club dues
+	employee emp;     //object of employee(aggregation)
+	public:
+	void getdata()
+	{
+		emp.getdata();
+		cout<<" Enter title: ";
+		cin>>title;
+		cout<<" Enter golf club dues:";
+		cin>>dues;
+		cout<<endl;
+	}
+	void display()
+	{
+		cout<<"***Manager Information***"<<endl<<endl;
+		emp.display();
+		cout<<" Title: "	<<title<<endl;
+		cout<<" Golf club dues: "<<dues<<endl<<endl;
+	}
+};
+////////////////////////////////////////////
+class scientist
+{
+	private:
+	int pubs;     //number of publications
+	employee emp;  //object of employee(aggregation)
+	public:
+	void getdata()
+	{
+		emp.getdata();
+		cout<<" Enter number of publications: ";
+		cin>>pubs;
+	}
+	void display()
+	{
+		cout<<"***Scientist Information***"<<endl<<endl;
+		emp.display();
+		cout<<" Number of Publications:"<<pubs<<endl<<endl;
+	}
+	
+	
+};
+/////////////////////////////////////////////////////////
+class laborer
+{
+	private:
+	employee emp;    //object of employee(aggregation)
+	public:
+	void getdata()
+	{
+		emp.getdata();
+  //laborer class doesn't need additional info. other than name and no.
+	}
+	void display()
+	{
+		cout<<"***Laborer Information***"<<endl<<endl;
+		emp.display();
+		cout<<endl<<endl;
+	}
+};
+
+
+int main()
+{
+	manager m1;
+	scientist s1;
+	laborer l1;
+	cout<<"Enter Data for Manager:"<<endl;
+	m1.getdata();
+	m1.display();
+	cout<<"--------------------------------"<<endl;
+	cout<<"Enter Data for Scientist:"<<endl;
+	s1.getdata();
+	s1.display();
+	cout<<"--------------------------------"<<endl;
+	cout<<"Enter Data for laborer:"<<endl;
+	l1.getdata();
+	l1.display();
+	cout<<"--------------------------------"<<endl;
+	return 0;
+}
